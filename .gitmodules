@@ -1,3 +1,0 @@
-[submodule "CustomSubModule"]
-	path = CustomSubModule
-	url = git@github.com:joe-goullaud/CustomSubModule.git
