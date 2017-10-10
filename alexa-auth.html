@@ -7,6 +7,7 @@
 		<h2>This is the Joe Do Re Auth Page</h2>
 		<a href="safari://https%3A%2F%2Fjoe-goullaud.github.io%2Falexa-auth.html%3Fsafari-auth%3Dtrue">Test Schema</a>
 		<p><button onclick="authorizeWithDoRe()">Authorize with DoRe</button></p>
+		<p><button onclick="redirectWithTestCode()">Redirect with test code</button></p>
 		<p>
 			<h4>Params:</h4>
 			<div id='paramsdiv'>
@@ -20,6 +21,14 @@
 			function authorizeWithDoRe() {
 				var searchParams = new URLSearchParams(window.location.search);
 				document.location = "overcast://search" + window.location.search;
+			}
+			
+			function redirectWithTestCode() {
+				var searchParams = new URLSearchParams(window.location.search);
+				var redirect_uri = decodeURIComponent(searchParams.get('redirect_uri'));
+				var state = searchParams.get('state');
+				var fragment = "state=" + state + "&access_token=JoeDoReTestToken&token_type=Bearer"
+				document.location = redirect_uri + "#" + query
 			}
 		</script>
 	</body>
