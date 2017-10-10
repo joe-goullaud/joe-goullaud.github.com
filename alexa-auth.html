@@ -31,7 +31,7 @@
 			function redirectWithTestCode() {
 				var url = new URL(window.location);
 				var searchParams = url.searchParams;
-				var redirect_uri = decodeURIComponent(searchParams.get('redirect_uri'));
+				var redirect_uri = searchParams.get('redirect_uri');
 				var state = searchParams.get('state');
 				var fragment = "state=" + state + "&access_token=JoeDoReTestToken&token_type=Bearer";
 				var newLocation = redirect_uri + "#" + query;
