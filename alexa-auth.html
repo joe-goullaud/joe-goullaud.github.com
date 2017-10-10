@@ -9,6 +9,8 @@
 		<p><button onclick="authorizeWithDoRe()">Authorize with DoRe</button></p>
 		<p><button onclick="redirectWithTestCode()">Redirect with test code</button></p>
 		<p>
+			<div id='redirectdiv'>
+			</div>
 			<h4>Params:</h4>
 			<div id='paramsdiv'>
 			</div>
@@ -27,8 +29,10 @@
 				var searchParams = new URLSearchParams(window.location.search);
 				var redirect_uri = decodeURIComponent(searchParams.get('redirect_uri'));
 				var state = searchParams.get('state');
-				var fragment = "state=" + state + "&access_token=JoeDoReTestToken&token_type=Bearer"
-				document.location = redirect_uri + "#" + query
+				var fragment = "state=" + state + "&access_token=JoeDoReTestToken&token_type=Bearer";
+				var newLocation = redirect_uri + "#" + query;
+				document.getElementById('redirectdiv').innerText = newLocation;
+				document.location = newLocation;
 			}
 		</script>
 	</body>
