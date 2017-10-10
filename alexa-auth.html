@@ -25,7 +25,7 @@
 				var url = new URL(window.location);
 				var searchParams = url.searchParams;
 				document.getElementById('redirectdiv').innerText = searchParams.get('redirect_uri');
-				//document.location = "overcast://search" + window.location.search;
+				document.location = "overcast://search" + window.location.search;
 			}
 			
 			function redirectWithTestCode() {
@@ -36,6 +36,7 @@
 				var fragment = "state=" + state + "&access_token=JoeDoReTestToken&token_type=Bearer";
 				var newLocation = redirect_uri + "#" + fragment;
 				document.getElementById('redirectdiv').innerText = newLocation;
+				window.location = newLocation;
 			}
 		</script>
 	</body>
