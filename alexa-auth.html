@@ -5,7 +5,8 @@
 	</head>
 	<body>
 		<h2>This is the Joe Do Re Auth Page</h2>
-		<p>You should be redirected shortly...</p>
+		<a href="safari://https://joe-goullaud.github.io/alexa-auth.html?safari-auth=true">Test Schema</a>
+		<p><button onclick="authorizeWithDoRe()">Authorize with DoRe</button>></p>
 		<p>
 			<h4>Params:</h4>
 			<div id='paramsdiv'>
@@ -13,7 +14,13 @@
 		</p>
 		<script type="text/javascript">
 			var searchParams = new URLSearchParams(window.location.search);
-			document.getElementById('paramsdiv').innerHTML = window.location.search;
+			document.getElementById('paramsdiv').innerText = window.location.search;
+			
+			
+			function authorizeWithDoRe() {
+				var searchParams = new URLSearchParams(window.location.search);
+				
+			}
 		</script>
 	</body>
 </html>
