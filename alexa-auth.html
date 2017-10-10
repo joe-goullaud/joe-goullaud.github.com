@@ -16,18 +16,21 @@
 			</div>
 		</p>
 		<script type="text/javascript">
-			var searchParams = new URLSearchParams(window.location.search);
+			var url = new URL(window.location);
+			var searchParams = url.searchParams;
 			document.getElementById('paramsdiv').innerText = window.location.search;
 			
 			
 			function authorizeWithDoRe() {
-				var searchParams = new URLSearchParams(window.location.search);
+				var url = new URL(window.location);
+				var searchParams = url.searchParams;
 				document.getElementById('redirectdiv').innerText = searchParams.get('redirect_uri');
 				//document.location = "overcast://search" + window.location.search;
 			}
 			
 			function redirectWithTestCode() {
-				var searchParams = new URLSearchParams(window.location.search);
+				var url = new URL(window.location);
+				var searchParams = url.searchParams;
 				var redirect_uri = decodeURIComponent(searchParams.get('redirect_uri'));
 				var state = searchParams.get('state');
 				var fragment = "state=" + state + "&access_token=JoeDoReTestToken&token_type=Bearer";
