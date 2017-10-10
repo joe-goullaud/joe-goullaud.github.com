@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<title>Joe Do Re Auth</title>
+		<meta redirect= />
+	</head>
+	<body>
+		<h2>This is the Joe Do Re Auth Page</h2>
+		<p>You should be redirected shortly...</p>
+		<p>
+			<h4>Params:</h4>
+			<div id='paramsdiv'>
+			</div>
+		</p>
+		<script type="text/javascript">
+			var searchParams = new URLSearchParams(window.location.search);
+			document.getElementById('paramsdiv').innerHTML = window.location.search;
+		</script>
+	</body>
+</html>
