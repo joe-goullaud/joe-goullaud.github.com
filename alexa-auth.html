@@ -34,7 +34,7 @@
 				var redirect_uri = searchParams.get('redirect_uri');
 				var state = searchParams.get('state');
 				var fragment = "state=" + state + "&access_token=JoeDoReTestToken&token_type=Bearer";
-				var newLocation = redirect_uri + "#" + query;
+				var newLocation = redirect_uri + "#" + fragment;
 				document.getElementById('redirectdiv').innerText = newLocation;
 			}
 		</script>
