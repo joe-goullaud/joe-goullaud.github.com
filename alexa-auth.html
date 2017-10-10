@@ -22,7 +22,8 @@
 			
 			function authorizeWithDoRe() {
 				var searchParams = new URLSearchParams(window.location.search);
-				document.location = "overcast://search" + window.location.search;
+				document.getElementById('redirectdiv').innerText = searchParams.get('redirect_uri');
+				//document.location = "overcast://search" + window.location.search;
 			}
 			
 			function redirectWithTestCode() {
